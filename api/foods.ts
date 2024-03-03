@@ -36,7 +36,10 @@ router.put("/score",(req,res)=>{
     });
 });
 router.get("/random",(req,res)=>{
-    let sql = "select img from foods order by RAN() limit:2";
-    sql = mysql.format();
+    let sql = "select img from foods ORDER BY RAND() LIMIT 3";
+   conn.query(sql,(err,result)=>{
+    if(err) throw err;
+    res.status(200).json(result);
+   });
 
 });
