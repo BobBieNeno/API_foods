@@ -19,7 +19,7 @@ router.get("/",(req,res)=>{
     // sql = mysql.forma(,[]);
 });
 router.put("/score",(req,res)=>{
-    const fid = req.query.id;
+    const fid = req.query.fid;
     const score = req.query.score;
     let sql = "update `foods` set `score` = ? where `fid` = ?";
     sql = mysql.format(sql,[
@@ -36,7 +36,7 @@ router.put("/score",(req,res)=>{
     });
 });
 router.get("/random",(req,res)=>{
-    let sql = "select img from foods ORDER BY RAND() LIMIT 2";
+    let sql = "select img,fid from foods ORDER BY RAND() LIMIT 2";
    conn.query(sql,(err,result)=>{
     if(err) throw err;
     res.status(200).json(result);
