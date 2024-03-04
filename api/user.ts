@@ -5,6 +5,13 @@ import mysql from "mysql";
 import { UserPostResp } from "../model/user_post_resp";
 
 export const router = express.Router();
+router.get("/newUser",(req,res)=>{
+  let sql = "SELECT uid FROM `user` ORDER BY `user`.`uid` DESC LIMIT 1;";
+  conn.query(sql,(err,result)=>{
+    if(err) throw err;
+    res.status(200).json(result);
+  });
+});
 router.get("/:id", (req, res) => {
   const id = req.params.id;
   console.log(id);
@@ -104,17 +111,18 @@ router.put("/update/:id", async (req, res) => {
 
 router.post("/addData",(req,res)=>{
   // const uid = req.query.uid;
-  const name = req.query.name;
-  const type = 0;
-  // const last_name = req.query.last_name;
-  const email = req.query.email;
-  const pass = req.query.pass;
+  // const name = req.query.name;
+  // const type = 0;
+  // // const last_name = req.query.last_name;
+  // const email = req.query.email;
+  // const pass = req.query.pass;
+  let user: UserPostResp = req.body;  
   let sql = "insert into `user`( `name`,`type`,`email`,`pass` )value(?,?,?,?)";
   sql = mysql.format(sql,[
-    name,
-    type,
-    email,
-    pass
+    user.name,
+    user.type,
+    user.email,
+    user.pass
   ]);
   conn.query(sql,(err,result)=>{
     if(err){
