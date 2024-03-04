@@ -43,7 +43,7 @@ router.get("/", (req, res) => {
 
 router.get("/foods/:id",(req,res)=>{
   const uid = req.params.id;
-  let sql = "SELECT foods.img from user INNER JOIN foods on foods.uid_fid = user.uid where uid = ?";
+  let sql = "SELECT foods.img,user.name,user.last_name,user.avatar from user INNER JOIN foods on foods.uid_fid = user.uid where uid = ?";
   sql = mysql.format(sql,[
     uid
   ]);
