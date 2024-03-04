@@ -44,7 +44,7 @@ router.get("/random",(req,res)=>{
 
 });
 router.get("/ranking",(req,res)=>{
-    let sql  = "SELECT * FROM foods ORDER BY foods.score DESC LIMIT 10";
+    let sql  = "SELECT score,foods.name,user.uid from  user INNER JOIN foods on foods.uid_fid ORDER BY foods.score DESC LIMIT 10";
     conn.query(sql,(err,result)=>{
         if(err) throw err;
         res.status(200).json(result);
