@@ -6,3 +6,9 @@ export interface UserPostResp {
     avatar:    string;
     last_name: string;
 }
+export interface imgPostResp {
+    uid:      number;
+    img:      string;
+    score:      number;
+
+}
