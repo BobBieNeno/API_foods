@@ -36,7 +36,7 @@ router.put("/score",(req,res)=>{
     });
 });
 router.get("/random",(req,res)=>{
-    let sql = "select fid,score,img from foods ORDER BY RAND() LIMIT 2";
+    let sql = "select fid,score,img,name from foods ORDER BY RAND() LIMIT 2";
    conn.query(sql,(err,result)=>{
     if(err) throw err;
     res.status(200).json(result);
@@ -44,7 +44,7 @@ router.get("/random",(req,res)=>{
 
 });
 router.get("/ranking",(req,res)=>{
-    let sql  = "SELECT score,foods.name,user.uid from  user INNER JOIN foods on foods.uid_fid ORDER BY foods.score DESC LIMIT 10";
+    let sql  = "SELECT *  from user INNER JOIN foods on foods.uid_fid ORDER BY foods.score DESC";
     conn.query(sql,(err,result)=>{
         if(err) throw err;
         res.status(200).json(result);
