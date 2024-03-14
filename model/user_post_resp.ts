@@ -12,3 +12,12 @@ export interface imgPostResp {
     score:      number;
 
 }
+export interface User {
+    uid:       string;
+    name:      string;
+    type:      number;
+    email:     string;
+    pass:      string;
+    avatar:    string;
+    last_name: string;
+}
