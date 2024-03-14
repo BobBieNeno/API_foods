@@ -21,3 +21,9 @@ export interface User {
     avatar:    string;
     last_name: string;
 }
+export interface Date {
+   fid:         number;
+   date:        string;
+   score:       number;
+   
+}

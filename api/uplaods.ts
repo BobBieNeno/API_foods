@@ -111,7 +111,7 @@ router.put("/:id",async (req,res)=>{
         res.json(err);
     }else{
         res.status(200).json({
-            affected_row : result.affected_row,
+            affected_row : result.affectedRows,
             "update":"fulll !!!"
         });
     }

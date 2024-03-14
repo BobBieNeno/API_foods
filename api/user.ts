@@ -129,7 +129,7 @@ router.post("/addData",(req,res)=>{
       res.status(400).json(err);
     }else{
       res.status(200).json({
-        affected_row: result.affected_row ,
+        affected_row: result.affectedRows ,
         add_data : "Add Data successfull"
       
     });
