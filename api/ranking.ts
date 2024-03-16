@@ -10,7 +10,7 @@ router.get("/",(rep,res)=>{
     res.send("Method Get in index.ts 11111");
 });
 router.get("/day1",(req,res)=>{
-    let sql = "SELECT * FROM `vote` where timestamp = CURRENT_DATE()-1 ORDER BY `vote`.`scroe` DESC";
+    let sql = "SELECT * FROM `vote` where timestamp = CURRENT_DATE() ORDER BY `vote`.`scroe` DESC";
     conn.query(sql,(err,result)=>{
         if(err){
             res.json(err);
@@ -20,7 +20,7 @@ router.get("/day1",(req,res)=>{
     });
 });
 router.get("/day2",(req,res)=>{
-    let sql = "SELECT * FROM `vote` where timestamp = CURRENT_DATE()-2 ORDER BY `vote`.`scroe` DESC";
+    let sql = "SELECT * FROM `vote` where timestamp = CURRENT_DATE()-1 ORDER BY `vote`.`scroe` DESC";
     conn.query(sql,(err,result)=>{
         if(err){
             res.json(err);
@@ -31,7 +31,7 @@ router.get("/day2",(req,res)=>{
 });
 
 router.get("/day3",(req,res)=>{
-    let sql = "SELECT * FROM `vote` where timestamp = CURRENT_DATE()-3 ORDER BY `vote`.`scroe` DESC";
+    let sql = "SELECT * FROM `vote` where timestamp = CURRENT_DATE()-2 ORDER BY `vote`.`scroe` DESC";
     conn.query(sql,(err,result)=>{
         if(err){
             res.json(err);
@@ -41,7 +41,7 @@ router.get("/day3",(req,res)=>{
     });
 });
 router.get("/day4",(req,res)=>{
-    let sql = "SELECT * FROM `vote` where timestamp = CURRENT_DATE()-4 ORDER BY `vote`.`scroe` DESC";
+    let sql = "SELECT * FROM `vote` where timestamp = CURRENT_DATE()-3 ORDER BY `vote`.`scroe` DESC";
     conn.query(sql,(err,result)=>{
         if(err){
             res.json(err);
@@ -51,7 +51,7 @@ router.get("/day4",(req,res)=>{
     });
 });
 router.get("/day5",(req,res)=>{
-    let sql = "SELECT * FROM `vote` where timestamp = CURRENT_DATE()-5 ORDER BY `vote`.`scroe` DESC";
+    let sql = "SELECT * FROM `vote` where timestamp = CURRENT_DATE()-4 ORDER BY `vote`.`scroe` DESC";
     conn.query(sql,(err,result)=>{
         if(err){
             res.json(err);
@@ -61,7 +61,7 @@ router.get("/day5",(req,res)=>{
     });
 });
 router.get("/day6",(req,res)=>{
-    let sql = "SELECT * FROM `vote` where timestamp = CURRENT_DATE()-6 ORDER BY `vote`.`scroe` DESC";
+    let sql = "SELECT * FROM `vote` where timestamp = CURRENT_DATE()-5 ORDER BY `vote`.`scroe` DESC";
     conn.query(sql,(err,result)=>{
         if(err){
             res.json(err);
@@ -71,7 +71,7 @@ router.get("/day6",(req,res)=>{
     });
 });
 router.get("/day7",(req,res)=>{
-    let sql = "SELECT * FROM `vote` where timestamp = CURRENT_DATE()-7 ORDER BY `vote`.`scroe` DESC";
+    let sql = "SELECT * FROM `vote` where timestamp = CURRENT_DATE()-6 ORDER BY `vote`.`scroe` DESC";
     conn.query(sql,(err,result)=>{
         if(err){
             res.json(err);
