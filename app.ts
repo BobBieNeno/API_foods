@@ -3,6 +3,7 @@ import {router as index} from "./api/index";
 import {router as user} from "./api/user";
 import {router as foods} from "./api/foods";
 import { router as uplaods } from "./api/uplaods";
+import {  router as ranking} from "./api/ranking"
 
 import bodyParser from "body-parser"; //รัลข้อมูลแบบ body ต้อง npm install body-parser ก่อน
 import cors from "cors";
@@ -20,3 +21,4 @@ app.use("/", index);
 app.use("/user" , user);
 app.use("/foods" , foods);
 app.use("/uplaods" , uplaods);
+app.use("/ranking" , ranking);
